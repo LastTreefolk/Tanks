@@ -9,15 +9,21 @@ sudo apt-get install g++ ncurses-dev
 
 g++ tanks.cpp -lncurses -o tanks
 
-2) OpenSuse/Fedora
+2) OpenSuse 
+
+sudo zypper install g++ ncurses-devel
+
+g++ tanks.cpp -lncurses -o tankS
+
+3)Fedora
 
 sudo apt-get install g++ ncurses-devel
 
 g++ tanks.cpp -lncurses -o tanks
 
-3) Arch:
+4) Arch:
 
-sudo apt-get install g++ ncurses
+sudo pacman -S g++ ncurses
 
 g++ tanks.cpp -lncurses -o tanks
 
