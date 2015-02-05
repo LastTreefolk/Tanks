@@ -140,12 +140,21 @@ int main()
 			cout << "Your Points: " << kills << endl;
 			break;
 		}
-		if (points >= 10*lvl+prevpoints)
+		if ((points >= 10*lvl+prevpoints)&&(lvl<=10))
 		{
 			prevpoints = points;
-			cout << "\nCongratulations, you won!" << endl;
-			cout << "Your Points: " << kills << endl;
-			cout << "Starting Level " << lvl+1 << endl;
+			if (lvl<10)
+			{
+				cout << "\nCongratulations, you won!" << endl;
+				cout << "Your Points: " << kills << endl;
+				cout << "Starting Level " << lvl+1 << endl;
+			}
+			else
+			{
+				cout << "\nCongratulations, you have completed the game!" << endl;
+				cout << "Your Points: " << kills << endl;
+			}
+				
 			#ifdef __linux__
 				sleep(3);
 			#elif TARGET_OS_MAC
@@ -184,7 +193,7 @@ void out()
     printw("%d", lifes);
     printw(" lifes    ");
     move(Fieldy + 3, 0);
-    printw("Points left to complete level: ");
+    printw("Kills left to complete level: ");
     printw("%d/%d     ", (points-prevpoints), (lvl*10));
 }
  
